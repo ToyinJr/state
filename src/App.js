@@ -14,11 +14,14 @@ function App() {
   let strike = () => {
     changeIsDone(true);
     console.log(isDone);
+    //will log false because state only changes in next render
   }
 
   let unstrike = () => {
     changeIsDone(false);
   }
+
+  //you can collapse both functions above into one function and pass the desired state into it
 
 
   let [count, setCount] = useState(0);
@@ -32,6 +35,8 @@ function App() {
   var decrease = () => {
     setCount(count - 1);  
   }
+
+  //you can do setCount((currentState)=>currentState+1)
 
   let [greet, setGreet] = useState("Greeting");
 
@@ -47,6 +52,8 @@ function App() {
     setGreet("Good Evening 🌙");
   }
 
+  //you can collapse the functons above into one fuction
+
   let [time, setTime] = useState(0);
 
   let newTime = () => {
@@ -61,7 +68,7 @@ function App() {
   setInterval(refreshTime, 1000);
 
   let [name1, changeName1] = useState("name");
-
+//changeName1 is bad naming convention because the second return item is a setter function
   let newName = () => {
     changeName1("Toyin Junior");
   }
